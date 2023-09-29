@@ -1,0 +1,9 @@
+.custom-background {
+  background-image: url("../../../../assets/Header-image-pokemon-baby-names.png");
+}
+.title_img {
+  width: 15rem;
+}
+.title_hover:hover .pokemon_img {
+  scale: 1.5;
+}
