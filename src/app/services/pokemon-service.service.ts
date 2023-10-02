@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PokemonBasic } from '../models/ResponsePokemon';
+import { PokemonBasicInfo } from '../models/ResponsePokemon';
 import { Pokemon_table } from '../models/Pokemon_table';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Pokemon_table } from '../models/Pokemon_table';
 export class PokemonServiceService {
   constructor() {}
 
-  turnToPokemon_Table(pokemonBasic: PokemonBasic[]) {
+  turnToPokemon_Table(pokemonBasic: PokemonBasicInfo[]) {
     let pokemonList: Pokemon_table[] = [];
     pokemonBasic.forEach((pokemon) => {
       const id = +pokemon.url.split('/')[pokemon.url.split('/').length - 2];

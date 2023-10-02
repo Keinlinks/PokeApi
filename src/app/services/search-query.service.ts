@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, map } from 'rxjs';
 import { Pokemon } from '../models/Pokemon';
 import { environment } from 'src/environment';
-import { PokemonBasic, ResponsePokemon } from '../models/ResponsePokemon';
+import { PokemonBasicInfo, ResponseAPI } from '../models/ResponsePokemon';
 import { PokemonRepositoryService } from './pokemon-repository.service';
 
 @Injectable({
@@ -19,11 +19,9 @@ export class SearchQueryService {
     type: string,
     limit: number,
     page: number
-  ): Observable<PokemonBasic[]> {
+  ): Observable<PokemonBasicInfo[]> {
     return this.http
-      .get<ResponsePokemon>(
-        `${environment.APIURL}/pokemon?limit=100000&offset=0`
-      )
+      .get<ResponseAPI>(`${environment.APIURL}/pokemon?limit=100000&offset=0`)
       .pipe(
         map((response) => {
           let pokemons = response.results.filter((pokemonBasic) => {

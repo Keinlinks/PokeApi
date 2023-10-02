@@ -1,6 +1,6 @@
-export interface Pokemon_table {
-  id: number;
-  name: string;
+import { PokemonObject } from './commonObject';
+
+export interface Pokemon_table extends PokemonObject {
   img: string;
   url: string;
 }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
 import { Pokemon } from '../models/Pokemon';
 import { environment } from 'src/environment';
-import { PokemonBasic, ResponsePokemon } from '../models/ResponsePokemon';
+import { PokemonBasicInfo } from '../models/ResponsePokemon';
 import { Pokemon_table } from '../models/Pokemon_table';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class PokemonRepositoryService {
   //Pokemon Data for table of alphabet
   private alpgabetList$ = new Subject<Pokemon_table[][]>();
   //pokemon with basic pokemon information
-  private pokemon$ = new BehaviorSubject<PokemonBasic[]>([]);
+  private pokemon$ = new BehaviorSubject<PokemonBasicInfo[]>([]);
   //pokemon list with all names for autocomplete
   private pokemonNamesList$ = new Subject<string[]>();
   //count of pokemons
@@ -89,7 +89,7 @@ export class PokemonRepositoryService {
     return this.pokemonNamesList$.asObservable();
   }
   //SETS
-  setPokemon(pokemon: PokemonBasic[]) {
+  setPokemon(pokemon: PokemonBasicInfo[]) {
     this.pokemon$.next(pokemon);
   }
   setCount(count: number) {

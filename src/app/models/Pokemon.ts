@@ -1,8 +1,8 @@
-export interface Pokemon {
-  id: number;
+import { PokemonObject } from './commonObject';
+
+export interface Pokemon extends PokemonObject {
   height: number;
   weight: number;
-  name: string;
   gameImage: string;
   artImage: string;
   types: string[];

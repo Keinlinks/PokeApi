@@ -1,10 +1,10 @@
-export interface ResponsePokemon {
+export interface ResponseAPI {
   count: number;
   next: string;
   previous: string;
-  results: PokemonBasic[];
+  results: PokemonBasicInfo[];
 }
-export interface PokemonBasic {
+export interface PokemonBasicInfo {
   name: string;
   url: string;
 }
