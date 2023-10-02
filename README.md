@@ -18,12 +18,14 @@ Sin embargo, la instrucción de la tabla de resúmen por alfabeto estaba un poco
 # Instrucciones para inicializar en servidor local
 
 - Clonar el Repositorio:
-  git clone <URL_del_repositorio>
+
+  - git clone <URL_del_repositorio>
 
 - Instalar Dependencias:
-  cd <nombre_del_directorio_clonado>
-  npm install
+
+  - cd <nombre_del_directorio_clonado>
+  - npm install
 
 - Iniciar el Servidor Local:
-  ng serve
-  La aplicación estará disponible en http://localhost:4200/. Puedes acceder a ella a través del navegador.
+  - ng serve
+  - La aplicación estará disponible en http://localhost:4200/. Puedes acceder a ella a través del navegador.
