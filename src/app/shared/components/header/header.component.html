@@ -1,50 +1,53 @@
-<header class="h-44 relative custom-background">
-  <div class="px-10 py-5 relative flex gap-7 justify-center">
-    <div class="w-60 hover:cursor-pointer title_hover">
+<header class="header-height relative custom-background">
+  <div
+    class="px-10 py-5 relative flex flex-col md:flex-row md:gap-7 justify-center"
+    *ngIf="favoritePokemon.id != 0"
+  >
+    <div
+      class="w-full md:w-60 hover:cursor-pointer title_hover"
+      (click)="openModal()"
+    >
       <img class="title_img" src="../../../../assets/pokemonFavorito.png" />
       <div class="mt-4">
         <img
           class="h-20 w-20 mx-auto pokemon_img transition-all"
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png"
+          [src]="favoritePokemon.artImage"
         />
       </div>
     </div>
     <div>
       <h2 class="pb-2"><strong>Caracteristicas</strong></h2>
       <ul class="leading-8">
-        <li class="flex gap-1">Tipo: <app-ship>Normal</app-ship></li>
-        <li>Habilidad: <strong>Transform</strong></li>
-        <li>ID: <strong>98</strong></li>
+        <li class="flex gap-1">
+          Tipo:
+          <app-ship *ngFor="let type of favoritePokemon.types">{{
+            type | firstUppercase
+          }}</app-ship>
+        </li>
+        <li>
+          Habilidad:
+          <strong>{{ favoritePokemon.abilities[0] | firstUppercase }}</strong>
+        </li>
+        <li>
+          ID: <strong>{{ favoritePokemon.id }}</strong>
+        </li>
       </ul>
     </div>
     <div>
       <h2><strong>Informacion adicional</strong></h2>
-      <ul class="leading-8">
-        <li class="flex gap-1">Peso:</li>
-        <li>Habilidad: <strong>Transform</strong></li>
-        <li>ID: <strong>98</strong></li>
+      <ul class="leading-4 md:leading-8">
+        <li class="flex gap-1">
+          Peso:<strong>{{ favoritePokemon.weight }} Kg</strong>
+        </li>
       </ul>
     </div>
-    <div class="flex">
-      <img
-        class="h-32 w-32 my-auto"
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
-        alt=""
-      />
-      <img
-        class="h-32 w-32 my-auto"
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
-        alt=""
-      /><img
-        class="h-32 w-32 my-auto"
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
-        alt=""
-      />
-      <img
-        class="h-32 w-32 my-auto"
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
-        alt=""
-      />
-    </div>
+    <div class="flex"></div>
+  </div>
+  <div
+    *ngIf="favoritePokemon.id == 0"
+    class="px-10 py-5 relative flex gap-7 justify-center"
+  >
+    <img src="../../../../assets/pokemonAPI.png" alt="" />
   </div>
 </header>
+<hr class="border-yellow-400 border-2" />

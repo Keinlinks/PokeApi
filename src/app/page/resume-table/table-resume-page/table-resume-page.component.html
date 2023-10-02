@@ -1,0 +1,4 @@
+<div class="my-5" *ngFor="let letter of alphabet; let i = index">
+  <h2 class="font-bold text-3xl text-center">{{ letter }}</h2>
+  <app-resume-table [Id]="i"></app-resume-table>
+</div>

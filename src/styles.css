@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --header-height: 184px;
+}
+body {
+  background-image: url("./assets/backrogrund.jpg");
+  background-position: center;
+  background-size: cover;
+
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";

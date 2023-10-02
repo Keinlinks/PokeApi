@@ -1,0 +1,12 @@
+.list-abilities li::before {
+  content: "-";
+  width: 10px;
+  height: 10px;
+}
+.pokemon-background {
+  background-image: url("../../../../assets/gradient-zoom-effect-background_23-2149723807.avif");
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  border-radius: 7px;
+}

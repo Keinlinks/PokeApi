@@ -9,7 +9,7 @@
   text-decoration: underline;
 }
 .minimun-height {
-  min-height: calc(85vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
 }
 table,
 .search {

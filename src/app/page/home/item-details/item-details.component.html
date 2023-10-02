@@ -1,1 +1,45 @@
-<p>item-details works!</p>
+<section class="p-5 bg-orange-500 rounded-md">
+  <div class="flex justify-center relative pokemon-background">
+    <img
+      *ngIf="!isLoading"
+      class="w-52 h-52 top-7 left-1 relative"
+      [src]="selectedPokemon.artImage"
+      alt=""
+    />
+    <mat-spinner *ngIf="isLoading" class="top-16 left-8 relative"></mat-spinner>
+  </div>
+  <h1 class="text-center text-5xl text-white py-2">
+    {{ selectedPokemon.name | firstUppercase }}
+  </h1>
+  <div class="flex">
+    <div class="basis-1/2">
+      <ul class="leading-10 font-medium">
+        <li>
+          Tipo:
+          <app-ship *ngFor="let type of selectedPokemon.types">{{
+            type | firstUppercase
+          }}</app-ship>
+        </li>
+        <li>
+          Habilidades:
+          <ul class="ml-5 leading-5 list-abilities">
+            <li *ngFor="let ability of selectedPokemon.abilities">
+              {{ ability | firstUppercase }}
+            </li>
+          </ul>
+        </li>
+        <li>Peso: {{ selectedPokemon.weight }} kg</li>
+      </ul>
+    </div>
+    <div class="basis-1/2 text-white font-extrabold text-xl text-center">
+      8-Bits base<img
+        class="mx-auto"
+        [src]="selectedPokemon.gameImage"
+        alt=""
+      />
+
+      8-Bits shiny
+      <img class="mx-auto" [src]="selectedPokemon.shinyImage" />
+    </div>
+  </div>
+</section>
